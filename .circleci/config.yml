@@ -45,8 +45,8 @@ jobs:
       - run:
           name: Create key.pem
           command: |
-            echo $KEY_PEM | base64 -d -i > random-lunch-ec2key.pem
-            chmod 400 random-lunch-ec2key.pem
+            echo $KEY_PEM | base64 -d -i > my-sample-server-key.pem
+            chmod 400 my-sample-server-key.pem
       - run:
           name: Add to known hosts
           command: ssh-keyscan -H 3.87.129.193 >> ~/.ssh/known_hosts
