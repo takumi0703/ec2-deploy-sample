@@ -48,6 +48,11 @@ jobs:
             echo $KEY_PEM | base64 -d -i > my-sample-server-key.pem
             chmod 400 my-sample-server-key.pem
       - run:
+          name: Check network connectivity
+          command: |
+            ping -c 4 3.87.129.193
+            traceroute 3.87.129.193
+      - run:
           name: Add to known hosts
           command: |
             mkdir -p ~/.ssh
